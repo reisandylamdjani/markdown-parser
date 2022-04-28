@@ -7,6 +7,8 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.print.attribute.standard.MediaSize.ISO;
+
 
 public class MarkdownParseTest {
     
@@ -79,4 +81,11 @@ public class MarkdownParseTest {
         assertEquals(List.of("a link on the first line"), al);
     }
 
+    @Test
+    public void test1Fails() throws IOException {
+        Path filePath = Path.of("test-file.md");
+        String content = Files.readString(filePath);
+        ArrayList<String> al = MarkdownParse.getLinks(content);
+        assertEquals(List.of("https://something.com", "some-thing.html"), al);
+    }
 }
