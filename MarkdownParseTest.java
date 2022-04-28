@@ -82,10 +82,10 @@ public class MarkdownParseTest {
     }
 
     @Test
-    public void test1Fails() throws IOException {
+    public void test1FailsAndPasses() throws IOException {
         Path filePath = Path.of("test-file.md");
         String content = Files.readString(filePath);
         ArrayList<String> al = MarkdownParse.getLinks(content);
-        assertEquals(List.of("https://something.com", "something.html"), al);
+        assertEquals(List.of("https://something.com", "some-thing.html"), al);
     }
 }
