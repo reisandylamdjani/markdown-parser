@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.Map;
 
 public class MarkdownParse {
-
     static int findCloseParen(String markdown, int openParen) {
         int closeParen = openParen + 1;
         int openParenCount = 1;
